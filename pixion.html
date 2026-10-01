@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PraRoz - Web Design & Development</title>
+    <!-- Font Awesome untuk ikon media sosial -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+      body {
+    background-image: url('ki.jpg');
+    background-size: cover;          /* Memaksa gambar memenuhi seluruh layar */
+    background-position: center;     /* Posisi gambar tepat di tengah */
+    background-repeat: no-repeat;    /* Mencegah gambar mengulang */
+    background-attachment: fixed;    /* Membuat background tetap saat di-scroll */
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+        /* NAVBAR */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: rgba(25, 28, 36, 0.9);
+            border-bottom: 1px solid #3a3f4d;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff8c00; /* Akses Oranye */
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #e0e0e0;
+        }
+
+        nav a {
+            color: #d1d5db;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff8c00;
+        }
+
+        .search-box {
+            display: flex;
+        }
+
+        .search-box input {
+            padding: 8px 12px;
+            border: 1px solid #4b5263;
+            background: #2b303c;
+            color: #fff;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+
+        .search-box button {
+            padding: 8px 15px;
+            background: #ff8c00;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 8%;
+            gap: 40px;
+        }
+
+        .content {
+            max-width: 550px;
+        }
+
+        .content h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .content h1 span {
+            color: #ff8c00;
+        }
+
+        .content p {
+            color: #9ca3af;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-join {
+            padding: 12px 30px;
+            background: #ff8c00;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-join:hover {
+            background: #e07b00;
+        }
+
+        /* FORM LOGIN */
+        .login-box {
+            width: 320px;
+            background: rgba(35, 40, 50, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            border: 1px solid #3a3f4d;
+            text-align: center;
+        }
+
+        .login-box h2 {
+            background: #ffffff;
+            color: #ff8c00;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #4b5263;
+            color: #fff;
+            outline: none;
+        }
+
+        .login-box input::placeholder {
+            color: #6b7280;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 10px;
+            background: #ff8c00;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .login-box p {
+            font-size: 13px;
+            color: #9ca3af;
+            margin-bottom: 15px;
+        }
+
+        .login-box p a {
+            color: #ff8c00;
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            color: #d1d5db;
+            margin: 0 8px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ff8c00;
+        }
+
+        /* Responsif untuk layar kecil */
+        @media (max-width: 850px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Pixion Bebaya<span>.</span></a>
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">SERVICE</a>
+            <a href="#">DESIGN</a>
+            <a href="#">CONTACT</a>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="Type To Search">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h1>Tutor Sebaya &<br><span>Development</span><br>Course</h1>
+            <a href="#" class="btn-join">JOIN US</a>
+        </div>
+
+        <div class="login-box">
+            <h2>Login Here</h2>
+            <form>
+                <input type="email" placeholder="Enter Email Here" required>
+                <input type="password" placeholder="Enter Password Here" required>
+                <button type="submit" class="btn-login">Login</button>
+            </form>
+            <p>Don't have an account? <br><a href="regres.html">Sign up</a> here</p>
+            <p>Log in with</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google"></i></a>
+                <a href="#"><i class="fab fa-skype"></i></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
