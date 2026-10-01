@@ -998,6 +998,7 @@ $halaman = isset($halaman) ? $halaman : basename($_SERVER['PHP_SELF']);
                 </div> 
                 <h3>Sweet Cookies Hampers</h3> 
                 <p>⭐⭐⭐⭐⭐</p> 
+                <p>⭐⭐⭐⭐⭐</p> 
             </div> 
         </a> 
 
