@@ -105,7 +105,7 @@ if (isset($_GET["aksi"])) {
 ?>
 
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
+<html lang="id" data-bs-theme="auto">
 
 <head>
     <script src="assets/js/color-modes.js"></script>
@@ -115,7 +115,7 @@ if (isset($_GET["aksi"])) {
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.111.3">
-    <title>IBox Online Shopping</title>
+    <title>Liya Chocolate House - Keranjang</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -138,10 +138,10 @@ if (isset($_GET["aksi"])) {
         .b-example-divider {
             width: 100%;
             height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
+            background-color: rgba(107, 62, 35, .1);
+            border: solid rgba(74, 36, 16, .15);
             border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+            box-shadow: inset 0 .5em 1.5em rgba(43, 23, 16, .1), inset 0 .125em .5em rgba(43, 23, 16, .15);
         }
 
         .b-example-vr {
@@ -174,27 +174,26 @@ if (isset($_GET["aksi"])) {
         }
 
         .btn-bd-primary {
-            --bd-violet-bg: #712cf9;
-            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+            --bd-brown-bg: #C9975B;
+            --bd-brown-rgb: 201, 151, 91;
 
             --bs-btn-font-weight: 600;
-            --bs-btn-color: var(--bs-white);
-            --bs-btn-bg: var(--bd-violet-bg);
-            --bs-btn-border-color: var(--bd-violet-bg);
-            --bs-btn-hover-color: var(--bs-white);
-            --bs-btn-hover-bg: #6528e0;
-            --bs-btn-hover-border-color: #6528e0;
-            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-            --bs-btn-active-color: var(--bs-btn-hover-color);
-            --bs-btn-active-bg: #5a23c8;
-            --bs-btn-active-border-color: #5a23c8;
+            --bs-btn-color: #2B1710;
+            --bs-btn-bg: var(--bd-brown-bg);
+            --bs-btn-border-color: var(--bd-brown-bg);
+            --bs-btn-hover-color: #fdf7ee;
+            --bs-btn-hover-bg: #6B3E23;
+            --bs-btn-hover-border-color: #6B3E23;
+            --bs-btn-focus-shadow-rgb: var(--bd-brown-rgb);
+            --bs-btn-active-color: #fdf7ee;
+            --bs-btn-active-bg: #4A2410;
+            --bs-btn-active-border-color: #4A2410;
         }
 
         .bd-mode-toggle {
             z-index: 1500;
         }
     </style>
-
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
@@ -207,7 +206,8 @@ if (isset($_GET["aksi"])) {
     <div class="container">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
             <div class="col-md-3 mb-2 mb-md-0">
-                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+                <a href="index.php" class="d-inline-flex link-body-emphasis text-decoration-none fw-bold fs-4">
+                    🍫 Liya Chocolate
                 </a>
             </div>
 
@@ -223,18 +223,17 @@ if (isset($_GET["aksi"])) {
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" /> 
                     </svg> 
                 </a> 
- 
             </div> 
         </header> 
     </div> 
- 
+
     <main> 
- 
+
         <div class="container marketing"> 
-            <h3 align="center"> Keranjangmu</h3> 
+            <h3 align="center">Keranjangmu</h3> 
             <br> 
             <?php if (!empty($_SESSION["cart"])) { ?> 
-                <table class="table"> 
+                <table class="table align-middle"> 
                     <thead> 
                         <tr class="text-center align-middle"> 
                             <th scope="col">Produk</th> 
@@ -251,14 +250,18 @@ if (isset($_GET["aksi"])) {
                         ?> 
                             <tr> 
                                 <td> 
-                                    <img src="img/<?= $value["foto"] ?>" height="100px"><?= $value["nama"] ?> 
+                                    <div class="d-flex align-items-center gap-3">
+                                        <img src="img/<?= htmlspecialchars($value["foto"]) ?>" height="80px" style="object-fit:cover; border-radius:8px;">
+                                        <span><?= htmlspecialchars($value["nama"]) ?></span>
+                                    </div>
                                 </td> 
                                 <td class="text-center align-middle"><?= $value["jumlah"] ?></td> 
-                                <td class="text-center align-middle">Rp <?php echo number_format($value["harga"]) ?></td> 
+                                <td class="text-center align-middle">Rp <?= number_format($value["harga"]) ?></td> 
                                 <td class="text-center align-middle"> 
-                                    Rp <?php echo number_format($value["jumlah"] * $value["harga"], 2); ?></td> 
+                                    Rp <?= number_format($value["jumlah"] * $value["harga"], 2); ?>
+                                </td> 
                                 <td class="text-center align-middle"> 
-                                    <a href="keranjang.php?aksi=hapus&id=<?= $value["id"]; ?>"><span class="btn btn-danger">Hapus</span></a> 
+                                    <a href="keranjang.php?aksi=hapus&id=<?= $value["id"]; ?>" class="btn btn-danger btn-sm">Hapus</a> 
                                 </td> 
                             </tr> 
                         <?php 
@@ -266,29 +269,22 @@ if (isset($_GET["aksi"])) {
                         } 
                         ?> 
                         <tr> 
-                            <td colspan="3" class="text-end align-middle">Grand Total</td> 
-                            <th class="text-center align-middle">Rp <?php echo number_format($total, 2); ?></th> 
-                            <td class="text-center align-middle"> 
-                              <td class="text-center align-middle">
-
-    <form action="cekot.php" method="POST">
-
-        <input type="hidden" name="aksi" value="beli">
-
-        <select name="metode_pembayaran" class="form-select mb-2" required>
-            <option value="">Pilih Pembayaran</option>
-            <option value="COD">COD</option>
-            <option value="Transfer Bank">Transfer Bank</option>
-            <option value="QRIS">QRIS</option>
-        </select>
-
-        <button type="submit" class="btn btn-outline-dark">
-            Beli
-        </button>
-
-    </form>
-
-</td>
+                            <td colspan="3" class="text-end align-middle fw-bold">Grand Total</td> 
+                            <th class="text-center align-middle">Rp <?= number_format($total, 2); ?></th> 
+                            <td class="text-center align-middle">
+                                <form action="cekot.php" method="POST" class="d-flex flex-column align-items-center gap-2">
+                                    <input type="hidden" name="aksi" value="beli">
+                                    <select name="metode_pembayaran" class="form-select form-select-sm" required style="max-width: 180px;">
+                                        <option value="">Pilih Pembayaran</option>
+                                        <option value="COD">COD</option>
+                                        <option value="Transfer Bank">Transfer Bank</option>
+                                        <option value="QRIS">QRIS</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-outline-dark btn-sm px-4">
+                                        Beli
+                                    </button>
+                                </form>
+                            </td>
                         </tr> 
                     </tbody> 
                 </table> 
@@ -296,21 +292,18 @@ if (isset($_GET["aksi"])) {
                 <p align="center"> Belum Ada Produk di Keranjang </p> 
                 <hr> 
             <?php } ?> 
- 
+
         </div> 
- 
- 
+
         <!-- FOOTER --> 
-        <footer class=" container"> 
-            <p class="float-end"><a href="web_umkm.php">Back to top</a></p> 
+        <footer class="container mt-5"> 
+            <p class="float-end"><a href="#">Back to top</a></p> 
             <p>&copy; 2017–2023 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p> 
         </footer> 
     </main> 
- 
- 
+
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script> 
- 
- 
+
 </body> 
- 
-</html>\
+
+</html>

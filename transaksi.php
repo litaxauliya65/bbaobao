@@ -214,7 +214,7 @@ $query_recent = mysqli_query($koneksi, "
     </div>
 
     <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Company name</a>
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Liya Chocolate House</a>
       <ul class="navbar-nav flex-row d-md-none">
         <li class="nav-item text-nowrap">
           <button class="nav-link px-3 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
@@ -324,9 +324,13 @@ $query_recent = mysqli_query($koneksi, "
                               <td><?= date('d-m-Y', strtotime($row['tanggal'])); ?></td>
                               <td><?= htmlspecialchars($row['username']); ?></td>
                               <td>Rp <?= number_format($row['total_harga'], 0, ',', '.'); ?></td>
-                              <td>
-                                  <a href="cetak.php?id=<?= urlencode($row['id_transaksi']); ?>" target="_blank">Cetak Struk</a>
-                              </td>
+                             <td>
+    <a href="cetak.php?id=<?= urlencode($row['id_transaksi']); ?>" target="_blank">Cetak Struk</a>
+    | 
+    <a href="hapus_transaksi.php?id=<?= urlencode($row['id_transaksi']); ?>" 
+       onclick="return confirm('Yakin ingin menghapus transaksi ini?');" 
+       style="color: red;">Hapus</a>
+</td>
                           </tr>
                       <?php endwhile; ?>
                   <?php else: ?>

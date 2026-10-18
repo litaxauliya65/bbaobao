@@ -161,7 +161,7 @@ if ($diskon < 0) {
 
         .btn-print { 
             padding: 8px 16px; 
-            background: #007bff; 
+            background: #480d0d; 
             color: #fff; 
             border: none; 
             border-radius: 4px; 
@@ -170,7 +170,7 @@ if ($diskon < 0) {
         } 
 
         .btn-print:hover { 
-            background: #0056b3; 
+            background: #745e3f; 
         } 
          
         /* Mode Cetak */ 

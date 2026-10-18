@@ -729,6 +729,12 @@ $halaman = isset($halaman) ? $halaman : basename($_SERVER['PHP_SELF']);
     border-radius: 10px;
 }
 
+.produk-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 @media (max-width: 768px) {
     .review { padding: 60px 20px; }
     .review-slider { max-width: 100%; }
@@ -997,8 +1003,7 @@ $halaman = isset($halaman) ? $halaman : basename($_SERVER['PHP_SELF']);
                     <img src="hempres/Sweet Cookies Hampers.jpg" alt="Sweet Cookies Hampers">
                 </div> 
                 <h3>Sweet Cookies Hampers</h3> 
-                <p>⭐⭐⭐⭐⭐</p> 
-                <p>⭐⭐⭐⭐⭐</p> 
+                <p>⭐⭐⭐⭐⭐</p>
             </div> 
         </a> 
 
